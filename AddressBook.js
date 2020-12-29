@@ -229,3 +229,9 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+//UC3 - Ability to create Address Book Array & Add Contacts to Array
+var addressBook = new Array();
+addressBook.push(pratik);
+addressBook.push(pranav);
+console.log(addressBook);
