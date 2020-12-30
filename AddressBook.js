@@ -234,4 +234,128 @@ try {
 var addressBook = new Array();
 addressBook.push(pratik);
 addressBook.push(pranav);
+console.log("\n**********Display Contacts**********");
 console.log(addressBook);
+
+//UC4 - Ability to Search & Modify exixting Contact
+const prompt = require('prompt-sync')({sigint: true});
+console.log("\n**********Update Contact**********");
+var input = prompt("Enter First Name to Search Contact: ");
+var status = false;
+addressBook.forEach(person => {
+    if (person.firstName == input) {
+        console.log("\nContact found!");
+        status = true;
+        console.log("1. Update ID" +
+                    "\n2. Update First Name" +
+                    "\n3. Update Last Name" +
+                    "\n4. Update Address" +
+                    "\n5. Update City" +
+                    "\n6. Update State" +
+                    "\n7. Update Zip" +
+                    "\n8. Update Monile Number" +
+                    "\n9. Update Email" +
+                    "\nPress any key to Exit")
+        var option = prompt("Enter number to select option: ");
+        switch (option) {
+            case "1":
+                input = prompt("Enter New ID: ");
+                try {
+                    person.newId = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+            case "2":
+                input = prompt("Enter New First Name: ");
+                try {
+                    person.newFirstName = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+            case "3":
+                input = prompt("Enter New Last Name: ");
+                try {
+                    person.newLastName = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+            case "4":
+                input = prompt("Enter New Address: ");
+                try {
+                    person.newAddress = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+            case "5":
+                input = prompt("Enter New City: ");
+                try {
+                    person.newCity = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+            case "6":
+                input = prompt("Enter New State: ");
+                try {
+                    person.newState = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+            case "7":
+                input = prompt("Enter New Zip: ");
+                try {
+                    person.newZip = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+            case "8":
+                input = prompt("Enter New Mobile Number: ");
+                try {
+                    person.newMobileNumber = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+            case "9":
+                input = prompt("Enter New Email: ");
+                try {
+                    person.newEmail = input;
+                    console.log("\nContact modified successfully");
+                    console.log(person.toString());
+                } catch (error) {
+                console.log(error);
+                }
+                break;
+        
+            default:
+                console.log("Nothing modified !!");
+                break;
+        }
+    }
+});
+
+if (!status) {
+    console.log("Contact not found !!!");
+}
