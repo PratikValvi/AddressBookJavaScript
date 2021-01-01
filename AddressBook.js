@@ -450,3 +450,9 @@ console.log("Contacts from " + cityname + " City:");
 requiredArray.forEach(person => {
     console.log(person.toString());
 });
+
+//UC10 - Ability to get number of Contacts count by City
+console.log("\n*******Count Contacts by City******");
+cityname = "Satara";
+let countByCity = addressBook.filter(searchByCity).length;
+console.log("There are " + countByCity + " Contacts from " + cityname + " City");
