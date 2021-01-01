@@ -417,3 +417,20 @@ if (hasDuplicate(addressBook)) {
 } else {
     console.log("Address Book does not have any Duplicate entries");
 }
+
+//UC8 - Ability to Search Contact in City
+console.log("\n******Search Contact in City******");
+var firstname = "Pratik";
+var lastname = "Valvi";
+var cityname = "Satara";
+
+let searchInCity = (person) => {
+  return person.firstName == firstname && person.lastName == lastname && person.city == cityname;
+}
+let requiredArray = addressBook.filter(searchInCity);
+
+if (requiredArray.length > 0) {
+    console.log("Contact found in " + cityname + " City");
+} else {
+    console.log("Contact not found in " + cityname + " City");
+}
