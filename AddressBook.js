@@ -234,6 +234,8 @@ try {
 var addressBook = new Array();
 addressBook.push(pratik);
 addressBook.push(pranav);
+let rohit = new Person(3,"Rohit","Kamble","Mission Hospital","Miraj","Maharashtra",415414,"91 8888111122","rohit.kamble@gmail.com");
+addressBook.push(rohit);
 console.log("\n**********Display Contacts**********");
 console.log(addressBook);
 
@@ -393,7 +395,25 @@ var reducer = () => {
         idSet.add(person.id);
     });
     return idSet;
-  }
+}
 
-  const idCollection = addressBook.reduce(reducer);
-  console.log("Address Book has " + idCollection.size + " Contacts");
+const idCollection = addressBook.reduce(reducer);
+console.log("Address Book has " + idCollection.size + " Contacts");
+
+//UC7 - Ability to ensure there is no duplicate Entry in Address Book
+console.log("\n***Check for Duplicate entries****");
+function hasDuplicate(addressBook) {
+    let IDSet = new Set();
+    let IDArray = new Array();
+    addressBook.forEach(person => {
+      IDSet.add(person.id);
+      IDArray.push(person.id);
+    });
+    return IDSet.size != IDArray.length;
+}
+
+if (hasDuplicate(addressBook)) {
+    console.log("Address Book has Duplicate entries");
+} else {
+    console.log("Address Book does not have any Duplicate entries");
+}
