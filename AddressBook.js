@@ -489,7 +489,7 @@ sortedByState.forEach(person => {
     console.log(person.toString());
 });
 
-console.log("\n********Sort Contacts by Zip******");
+console.log("\n*******Sort Contacts by Zip******");
 
 var sortedByZip = addressBook.sort((a, b) => {
     return (String(a.zip)).localeCompare(String(b.zip));
