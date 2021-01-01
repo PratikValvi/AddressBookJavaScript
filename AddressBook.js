@@ -427,10 +427,26 @@ var cityname = "Satara";
 let searchInCity = (person) => {
   return person.firstName == firstname && person.lastName == lastname && person.city == cityname;
 }
-let requiredArray = addressBook.filter(searchInCity);
+var requiredArray = addressBook.filter(searchInCity);
 
 if (requiredArray.length > 0) {
     console.log("Contact found in " + cityname + " City");
 } else {
     console.log("Contact not found in " + cityname + " City");
 }
+
+//UC9 - Ability to view Persons by City
+console.log("\n*******View Contacts by City******");
+cityname = "Satara";
+
+let searchByCity = (person) => {
+    if (person.city == cityname) {
+        return person;
+    }
+}
+requiredArray = addressBook.filter(searchByCity);
+
+console.log("Contacts from " + cityname + " City:");
+requiredArray.forEach(person => {
+    console.log(person.toString());
+});
