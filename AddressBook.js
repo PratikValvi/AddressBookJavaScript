@@ -461,9 +461,40 @@ console.log("There are " + countByCity + " Contacts from " + cityname + " City")
 console.log("\n********Sort Contacts by Name******");
 
 var sortedByName = addressBook.sort((a, b) => {
-    return (a.firstName).localeCompare(b.firstName)
+    return (a.firstName).localeCompare(b.firstName);
 });
 
 sortedByName.forEach(person => {
+    console.log(person.toString());
+});
+
+//UC12 - Ability to sort by City,State,Zip
+console.log("\n********Sort Contacts by City******");
+
+var sortedByCity = addressBook.sort((a, b) => {
+    return (a.city).localeCompare(b.city);
+});
+
+sortedByCity.forEach(person => {
+    console.log(person.toString());
+});
+
+console.log("\n********Sort Contacts by State******");
+
+var sortedByState = addressBook.sort((a, b) => {
+    return (a.state).localeCompare(b.state);
+});
+
+sortedByState.forEach(person => {
+    console.log(person.toString());
+});
+
+console.log("\n*******Sort Contacts by Zip******");
+
+var sortedByZip = addressBook.sort((a, b) => {
+    return (String(a.zip)).localeCompare(String(b.zip));
+});
+
+sortedByZip.forEach(person => {
     console.log(person.toString());
 });
